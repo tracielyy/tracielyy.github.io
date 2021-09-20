@@ -187,8 +187,11 @@ const Contents = () => {
 
               {/* Skills */}
               <Tab.Pane eventKey="skills">
-                <Skills name="python" rating="2" />
-                <Skills name="javascript" rating="3"/>
+                <Skills name="Python" rating="2" />
+                <Skills name="Javascript" rating="4"/>
+                <Skills name="Java" rating="4"/>
+                <Skills name="C++" rating="3"/>
+                <Skills name="HTML" rating="5"/>
               </Tab.Pane>
             </Tab.Content>
           </Col>

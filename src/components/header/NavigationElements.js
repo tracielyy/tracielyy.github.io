@@ -32,9 +32,10 @@ export const NavBar = styled(Navbar)`
 
 // Navigation Links
 export const NavLink = styled(Link)`
-
+    
 	font-family:monospace;
-	margin:auto;
+    text-align: left;
+
 
 `;
 

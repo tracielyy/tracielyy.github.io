@@ -12,18 +12,18 @@ export const SocialContainer = () => {
         margin: "0px 10px 0px 0px"
     }
     const Container = styled.div`
-        border: 2px solid black;
+
         width: 70%;
-        height: 30px;
         line-height:25px;
         margin-left:auto;
         margin-right:auto;
+        padding: 2px;
 
     `;
     return (
         <Container>
-            <SocialIcon bgColor={fragBgColor} fgColor={contentColor} style={size} url="https://twitter.com/tracielyy" />
-            <SocialIcon bgColor={fragBgColor} fgColor={contentColor} style={size} url="https://facebook.com/tracielyy" />
+            <SocialIcon bgColor={contentColor} fgColor={fragBgColor} style={size} url="https://twitter.com/tracielyy" />
+            <SocialIcon bgColor={contentColor} fgColor={fragBgColor} style={size} url="https://facebook.com/tracielyy" />
         </Container>
     );
 }
@@ -31,19 +31,21 @@ export const SocialContainer = () => {
 // Address and Phone
 export const ContactContainer = () => {
     const Container = styled.div`
+
+        color: ${contentColor};
+        font-family: 'consolas';
         margin-left:auto;
         margin-right:auto;
         margin-top:5px;
         width:70%;
-        border:2px solid orange;
-        color: ${contentColor}
+
+        
     `;
 
 
     return (
         <Container>
-            <div>123 Road Forest Dark Cliff Building SocialACtivity Block</div>
-            <div>+65 9123 4566</div>
+            <div>yanying25@outlook.com</div>
         </Container>
     );
 }

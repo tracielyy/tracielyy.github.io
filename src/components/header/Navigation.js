@@ -34,7 +34,7 @@ const Navigation = () => {
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
-          <Nav className="me-auto" style={{'float': 'right'}}>
+          <Nav className="me-auto">
             {/* Resume */}
             <NavLink id="active" to={`${process.env.PUBLIC_URL}/resume`} className="nav-link">
               Resume

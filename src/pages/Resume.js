@@ -1,8 +1,10 @@
 import { Fragment } from "react";
 import React, { useState, useEffect } from "react";
+import "./Resume.css";
 
 // Import Components
 import Container from "../components/fragment/FragContainer.js";
+import ProgressBar from "react-bootstrap/ProgressBar";
 import styled from "styled-components";
 import Tab from "react-bootstrap/Tab";
 import Nav from "react-bootstrap/Nav";
@@ -10,23 +12,102 @@ import Nav from "react-bootstrap/Nav";
 import { Row, Col } from "react-bootstrap";
 
 import "bootstrap/dist/css/bootstrap.min.css";
+import { HiCheckCircle } from "react-icons/hi";
+import { GoPrimitiveDot } from "react-icons/go";
 
 import {
   pageBgColor,
   fragBgColor,
   contentColor,
+  titleColor,
+  colorAccent,
+  lineColor,
+  subContentColor,
 } from "../components/color/Color.js";
 
-const Title = () => {
-  const ResumeTitle = styled.h2`
-    color: ${contentColor};
-    font-family: "arial";
-    text-align: left;
-  `;
+const Education = ({ course, school, duration, description }) => {
   return (
-    <div>
-      <ResumeTitle>Resume</ResumeTitle>
-    </div>
+    <section style={{ "margin-bottom": "60px" }}>
+      <h4
+        style={{
+          "font-weight": "bold",
+          color: titleColor,
+          "font-family": "arial",
+        }}
+      >
+        {course}
+      </h4>
+      <h5 style={{ color: contentColor }}>{school}</h5>
+      <div style={{ "font-style": "italic", color: colorAccent }}>
+        {duration}
+      </div>
+      <div>
+        {description.map((desc) => (
+          <div style={{ display: "flex" }}>
+            <HiCheckCircle
+              style={{
+                color: colorAccent,
+                "align-self": "center",
+                "margin-right": "3px",
+              }}
+            />
+            <span>{desc}</span>
+          </div>
+        ))}
+      </div>
+    </section>
+  );
+};
+
+const Experience = ({ jobTitle, company, duration, description }) => {
+  return (
+    <section>
+      <h5>
+        {jobTitle}
+        <span
+          style={{
+            color: colorAccent,
+            "font-family": "trebuchet ms",
+            "font-weight": "bold",
+            "margin-left": "3px",
+          }}
+        >
+          <span style={{ margin: "0px 4px" }}>@</span>
+          {company}
+        </span>
+      </h5>
+      <div style={{ "font-style": "italic" }}>{duration}</div>
+      <div>
+        {description.map((desc) => (
+          <div style={{ display: "flex" }}>
+            <GoPrimitiveDot
+              style={{
+                color: colorAccent,
+                "align-self": "center",
+                "margin-right": "3px",
+              }}
+            />
+            <span>{desc}</span>
+          </div>
+        ))}
+      </div>
+    </section>
+  );
+};
+
+const Skills = ({ name, rating }) => {
+  return (
+    <section>
+      <span>{name}</span>
+      <ProgressBar
+        striped
+        now={rating}
+        min={1}
+        max={10}
+        variant={"programming"}
+        style={{ width: "50%", height: "20px", "margin-bottom": "10px"}}
+      />
+    </section>
   );
 };
 
@@ -37,16 +118,24 @@ const Contents = () => {
     margin-top: 30px;
   `;
 
-  const ContentTitle = styled.h5``;
+  const steJobDesc = [
+    "Testing of software functions like account creation and report generation in our client company",
+    "Writing documentation for test case steps",
+    "Log identified issues in JIRA and retest fixed functions.",
+    "Communicate and collaborate with developers on daily basis to fix identified issues.",
+  ];
 
-  const Education = () =>{
-      return (
-        <section>
-            
-        </section>
-      );
+  // Education
+  const rpDesc = [
+    "Knowledge On Information System",
+    "Marketing Theories and Knowledge",
+  ];
 
-  }
+  const uowDesc = [
+    "Basic Knowledge On Cyber Security",
+    "Basic Object Oriented Programming Knowledge",
+    "Software Development",
+  ];
 
   return (
     <ResumeContents>
@@ -59,17 +148,47 @@ const Contents = () => {
                 <Nav.Link eventKey="education">Education</Nav.Link>
               </Nav.Item>
               <Nav.Item>
+                <Nav.Link eventKey="experience">Experience</Nav.Link>
+              </Nav.Item>
+              <Nav.Item>
                 <Nav.Link eventKey="skills">Skills</Nav.Link>
               </Nav.Item>
             </Nav>
           </Col>
           <Col sm={9}>
             <Tab.Content>
+              {/* Education */}
               <Tab.Pane eventKey="education">
-                <div>Hi</div>
+                {/* Polytechnic */}
+                <Education
+                  course="Diploma in Business Information System"
+                  school="Republic Polytechnic"
+                  duration="2015 - 2018"
+                  description={rpDesc}
+                />
+                {/* University */}
+                <Education
+                  course="Bachelor of Computer Science (Cyber Security)"
+                  school="University Of Wollongong"
+                  duration="2019 - 2021"
+                  description={uowDesc}
+                />
               </Tab.Pane>
+
+              {/* Experience */}
+              <Tab.Pane eventKey="experience">
+                <Experience
+                  jobTitle="Software Test Engineer"
+                  company="Pactera Singapore Pte Ltd"
+                  duration="Mar 2017 - Jul 2017"
+                  description={steJobDesc}
+                />
+              </Tab.Pane>
+
+              {/* Skills */}
               <Tab.Pane eventKey="skills">
-                <div>Hi adsdf</div>
+                <Skills name="python" rating="2" />
+                <Skills name="javascript" rating="3"/>
               </Tab.Pane>
             </Tab.Content>
           </Col>
@@ -80,10 +199,16 @@ const Contents = () => {
 };
 
 const Resume = () => {
+  const ResumeTitle = styled.h2`
+    color: ${contentColor};
+    font-family: "arial";
+    text-align: left;
+    text-decoration: underline;
+  `;
   return (
     <Fragment>
       <Container>
-        <Title />
+        <ResumeTitle>Resume</ResumeTitle>
         <Contents />
       </Container>
     </Fragment>

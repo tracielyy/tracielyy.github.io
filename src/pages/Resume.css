@@ -1,0 +1,13 @@
+
+.nav.nav-pills .nav-link.active {
+    background-color: #897562;
+}
+.nav-link, .nav-link:hover{
+    color:#897562;
+    cursor: pointer;
+}
+
+/* Programming Skills */
+.bg-programming{
+    background-color: #897562!important;
+  }

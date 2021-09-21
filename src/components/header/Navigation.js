@@ -36,12 +36,13 @@ const Navigation = () => {
     <Router>
       <NavBar collapseOnSelect expand="lg" variant="dark" sticky="top">
         <Navbar.Brand href={`${process.env.PUBLIC_URL}/`}>
-          <img src="android-chrome-512x512.png" height="40" width="40"/>
-          <span style={{"margin": "0px 10px", "font-family": "Lucida Console"}}>Tracie</span>
+          <img src="android-chrome-512x512.png" height="40" width="40" />
+          <span style={{ margin: "0px 10px", "font-family": "Lucida Console" }}>
+            Tracie
+          </span>
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
-
           <Nav
             className="me-auto"
             style={{ "justify-content": "end", width: "100%" }}
@@ -51,16 +52,24 @@ const Navigation = () => {
               id="active"
               as={Link}
               to={`${process.env.PUBLIC_URL}/resume`}
-              className="nav-link"
+              className="nav-link active"
             >
               Resume
             </NavLink>
             {/* Project */}
             <NavLink
               to={`${process.env.PUBLIC_URL}/projects`}
-              className="nav-link"
+              className="nav-link active"
             >
               Project
+            </NavLink>
+            <NavLink
+              as={Nav.Link}
+              href={`https://github.com/tracielyy`}
+              target="_blank"
+              className="nav-link active"
+            >
+              GitHub
             </NavLink>
           </Nav>
         </Navbar.Collapse>

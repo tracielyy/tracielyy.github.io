@@ -9,6 +9,7 @@ import {
   fragBgColor,
   contentColor,
   titleColor,
+  lightAccent,
   lineColor,
 } from "../../components/color/Color.js";
 import Navbar from "react-bootstrap/Navbar";
@@ -30,9 +31,13 @@ export const NavBar = styled(Navbar)`
 
 // Navigation Links
 export const NavLink = styled(Link)`
+  color: ${lightAccent} !important;
   font-family: arial;
   font-size: 15px;
   text-align: left;
+  &:hover {
+    color: ${fragBgColor} !important;
+  }
 `;
 
 // Horizontal Line Encasing The Navigation Bar

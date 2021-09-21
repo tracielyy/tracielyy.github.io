@@ -14,6 +14,8 @@ import { Row, Col } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { HiCheckCircle } from "react-icons/hi";
 import { GoPrimitiveDot } from "react-icons/go";
+import { GiMoebiusStar } from "react-icons/gi";
+import { FiDownload } from "react-icons/fi";
 
 import {
   pageBgColor,
@@ -97,15 +99,23 @@ const Experience = ({ jobTitle, company, duration, description }) => {
 
 const Skills = ({ name, rating }) => {
   return (
-    <section>
-      <span>{name}</span>
+    <section style={{ "margin-bottom": "15px" }}>
+      <span style={{ fontFamily: "courier new", "font-weight": "bold" }}>
+        {name}
+      </span>
       <ProgressBar
         striped
         now={rating}
         min={1}
         max={10}
         variant={"programming"}
-        style={{ width: "50%", height: "20px", "margin-bottom": "10px"}}
+        style={{
+          width: "60%",
+          height: "20px",
+          "margin-bottom": "10px",
+          "font-weight": "bold",
+        }}
+        label={rating + "/10"}
       />
     </section>
   );
@@ -187,11 +197,22 @@ const Contents = () => {
 
               {/* Skills */}
               <Tab.Pane eventKey="skills">
+                <div
+                  style={{
+                    "font-style": "italic",
+                    "margin-bottom": "10px",
+                    color: titleColor,
+                  }}
+                >
+                  <GiMoebiusStar /> ( Ratings will continue change over time. I
+                  do believe in continuous learning &amp; improving oneself. )
+                </div>
                 <Skills name="Python" rating="2" />
-                <Skills name="Javascript" rating="4"/>
-                <Skills name="Java" rating="4"/>
-                <Skills name="C++" rating="3"/>
-                <Skills name="HTML" rating="5"/>
+                <Skills name="Javascript" rating="4" />
+                <Skills name="Java" rating="4" />
+                <Skills name="C++" rating="3" />
+                <Skills name="HTML" rating="5" />
+                <Skills name="CSS" rating="3" />
               </Tab.Pane>
             </Tab.Content>
           </Col>
@@ -211,7 +232,19 @@ const Resume = () => {
   return (
     <Fragment>
       <Container>
-        <ResumeTitle>Resume</ResumeTitle>
+        <ResumeTitle>
+          Resume
+          <a href="/files/Resume.pdf" download>
+            <FiDownload
+              style={{
+                color: colorAccent,
+                margin: "0px 12px",
+                "font-size": "25",
+              }}
+            />
+          </a>
+        </ResumeTitle>
+
         <Contents />
       </Container>
     </Fragment>

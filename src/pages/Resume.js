@@ -106,7 +106,7 @@ const Skills = ({ name, rating }) => {
       <ProgressBar
         striped
         now={rating}
-        min={1}
+        min={0}
         max={10}
         variant={"programming"}
         style={{
@@ -153,7 +153,7 @@ const Contents = () => {
         <Row>
           <Col sm={3}>
             {/* The little tabs at the left side */}
-            <Nav variant="pills" className="flex-column">
+            <Nav variant="pills" className="flex-column" style={{"margin-bottom": "20px"}}>
               <Nav.Item>
                 <Nav.Link eventKey="education">Education</Nav.Link>
               </Nav.Item>
@@ -212,7 +212,7 @@ const Contents = () => {
                 <Skills name="Java" rating="4" />
                 <Skills name="C++" rating="3" />
                 <Skills name="HTML" rating="5" />
-                <Skills name="CSS" rating="3" />
+                <Skills name="CSS" rating="4" />
               </Tab.Pane>
             </Tab.Content>
           </Col>
@@ -225,9 +225,9 @@ const Contents = () => {
 const Resume = () => {
   const ResumeTitle = styled.h2`
     color: ${contentColor};
-    font-family: "arial";
+    font-family: "Trebuchet MS";
+    font-weight: bold;
     text-align: left;
-    text-decoration: underline;
   `;
   return (
     <Fragment>

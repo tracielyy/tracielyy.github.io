@@ -3,6 +3,7 @@ import React, { useState, useEffect } from "react";
 
 // Import Components
 import Container from "../components/fragment/FragContainer.js";
+import Figure from "react-bootstrap/Figure";
 
 // Import Resources
 import {
@@ -42,16 +43,36 @@ const HomeContents = () => {
     }
     return age;
   }
+  const figWidth = 170;
+  const figHeight = 180;
   return (
     <div>
       <section style={{ "margin-top": "20px", "text-align": "left" }}>
-        <h4 style={{ "font-family": "Trebuchet MS", "font-weight": "bold" }}>
-          About Me
-        </h4>
-        <p>
-          <span>Hi guys, I'm Tracie Ling.</span>{" "}
-          <span>I am an aspiring software engineer and currently {getMyAge(myAge)} years old.</span>
-        </p>
+        {/* Picture Of Myself */}
+        <Figure>
+          <Figure.Image
+            width={figWidth}
+            height={figHeight}
+            alt="171x180"
+            src="android-chrome-512x512.png"
+            roundedCircle
+          />
+          <Figure.Caption style={{ width: figWidth, "text-align": "center" }}>
+            Tracie Ling Yan Ying
+          </Figure.Caption>
+        </Figure>
+        <div style={{"margin-left": "25px"}}>
+          <h4 style={{ "font-family": "Trebuchet MS", "font-weight": "bold" }}>
+            About Me
+          </h4>
+          <p>
+            <span>Hi guys, I'm Tracie Ling.</span>{" "}
+            <span>
+              I am an aspiring software engineer and currently {getMyAge(myAge)}{" "}
+              years old.
+            </span>
+          </p>
+        </div>
       </section>
     </div>
   );

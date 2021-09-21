@@ -30,16 +30,16 @@ import {
 const Education = ({ course, school, duration, description }) => {
   return (
     <section style={{ "margin-bottom": "60px" }}>
-      <h4
+      <h5
         style={{
           "font-weight": "bold",
           color: titleColor,
-          "font-family": "arial",
+          "font-family": "trebuchet ms",
         }}
       >
         {course}
-      </h4>
-      <h5 style={{ color: contentColor }}>{school}</h5>
+      </h5>
+      <h6 style={{ color: contentColor }}>{school}</h6>
       <div style={{ "font-style": "italic", color: colorAccent }}>
         {duration}
       </div>
@@ -153,7 +153,11 @@ const Contents = () => {
         <Row>
           <Col sm={3}>
             {/* The little tabs at the left side */}
-            <Nav variant="pills" className="flex-column" style={{"margin-bottom": "20px"}}>
+            <Nav
+              variant="pills"
+              className="flex-column"
+              style={{ "margin-bottom": "20px" }}
+            >
               <Nav.Item>
                 <Nav.Link eventKey="education">Education</Nav.Link>
               </Nav.Item>
@@ -223,7 +227,7 @@ const Contents = () => {
 };
 
 const Resume = () => {
-  const ResumeTitle = styled.h2`
+  const ResumeTitle = styled.h4`
     color: ${contentColor};
     font-family: "Trebuchet MS";
     font-weight: bold;
@@ -233,7 +237,7 @@ const Resume = () => {
     <Fragment>
       <Container>
         <ResumeTitle>
-          Resume
+          <span>Resume</span>
           <a href="/files/Resume.pdf" download>
             <FiDownload
               style={{

@@ -23,23 +23,35 @@ const Example = () => {
   );
 };
 
-const HomeTitle = () => {
-  return (
-    <div>
-      <h1 style={{ color: titleColor, "font-family": "monospace" }}>
-        {"<Welcome /> ..."}
-      </h1>
-    </div>
-  );
+const HomeBillboard = () => {
+  return <div></div>;
 };
 
 // Home Body Contents
 const HomeContents = () => {
+  const myAge = "1998/01/25";
+  function getMyAge(dateStr /*YYYY/MM/DD*/) {
+    let today = new Date();
+    let dob = new Date(dateStr);
+    let age = today.getFullYear() - dob.getFullYear();
+    let month = today.getMonth() - dob.getMonth();
+
+    // Check if past dob
+    if (month < 0 || (month === 0 && today.getDate() < dob.getDate())) {
+      age--;
+    }
+    return age;
+  }
   return (
     <div>
       <section style={{ "margin-top": "20px", "text-align": "left" }}>
-        <h4>About Me</h4>
-        <p>Hi guys, my name is Ling Yan Ying.</p>
+        <h4 style={{ "font-family": "Trebuchet MS", "font-weight": "bold" }}>
+          About Me
+        </h4>
+        <p>
+          <span>Hi guys, I'm Tracie Ling.</span>{" "}
+          <span>I am an aspiring software engineer and currently {getMyAge(myAge)} years old.</span>
+        </p>
       </section>
     </div>
   );
@@ -49,7 +61,7 @@ const Home = () => {
   return (
     <Fragment>
       <Container>
-        <HomeTitle />
+        <HomeBillboard />
         <HomeContents />
       </Container>
     </Fragment>

@@ -35,13 +35,34 @@ const HomeTitle = () => {
 
 // Home Body Contents
 const ProjectContents = () => {
+  // List of Projects (in object)
+
+  const ProjectDisplay = ({ projectTitle = "" }) => {
+    return <div>{projectTitle}</div>;
+  };
+
+  const ProjectCategory = ({ category }) => {
+    return (
+      <section style={{ "margin-left": "10px", "margin-top": "15px" }}>
+        <h5>{category}</h5>
+        {/* List of Personal Projects (Loop) */}
+        <ProjectDisplay projectTitle="Sample" />
+      </section>
+    );
+  };
+
   return (
     <div>
       <section style={{ "margin-top": "20px", "text-align": "left" }}>
         <h4 style={{ "font-family": "Trebuchet MS", "font-weight": "bold" }}>
           Projects
         </h4>
-        <p>123.</p>
+
+        {/* Personal Section */}
+        <ProjectCategory category="Personal Projects" />
+
+        {/* Other Works */}
+        <ProjectCategory category="Other Projects" />
       </section>
     </div>
   );

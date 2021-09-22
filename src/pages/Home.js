@@ -3,7 +3,7 @@ import React, { useState, useEffect } from "react";
 
 // Import Components
 import Container from "../components/fragment/FragContainer.js";
-import Figure from "react-bootstrap/Figure";
+import Image from "react-bootstrap/Image";
 
 // Import Resources
 import {
@@ -11,6 +11,7 @@ import {
   fragBgColor,
   titleColor,
 } from "../components/color/Color.js";
+import Myself from "../resources/images/myself.jpg";
 
 const Example = () => {
   // Declare a new state variable, which we'll call "count"
@@ -43,33 +44,30 @@ const HomeContents = () => {
     }
     return age;
   }
-  const figWidth = 170;
-  const figHeight = 180;
+  const figWidth = 280;
+  const figHeight = 280;
   return (
     <div>
       <section style={{ "margin-top": "20px", "text-align": "left" }}>
         {/* Picture Of Myself */}
-        <Figure>
-          <Figure.Image
+        <div style={{"margin-bottom": "10px"}}>
+          <Image
             width={figWidth}
             height={figHeight}
             alt="171x180"
-            src="android-chrome-512x512.png"
+            src={Myself}
             roundedCircle
           />
-          <Figure.Caption style={{ width: figWidth, "text-align": "center" }}>
-            Tracie Ling Yan Ying
-          </Figure.Caption>
-        </Figure>
-        <div style={{"margin-left": "25px"}}>
+        </div>
+        <div style={{ "margin-left": "10px" , "justify-content": "end"}}>
           <h4 style={{ "font-family": "Trebuchet MS", "font-weight": "bold" }}>
             About Me
           </h4>
           <p>
-            <span>Hi guys, I'm Tracie Ling.</span>{" "}
+            <span >Hi guys, I'm <span style={{"font-weight": "bold"}}>Tracie Ling.</span></span>{" "}
             <span>
               I am an aspiring software engineer and currently {getMyAge(myAge)}{" "}
-              years old.
+              years old. At present a fresh graduate from University Of Wollongong.
             </span>
           </p>
         </div>

@@ -7,6 +7,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import Home from "../../pages/Home.js";
 import Resume from "../../pages/Resume.js";
 import Projects from "../../pages/Projects.js";
+import Contact from "../../pages/Contact.js";
 
 // Import Resources
 // Sequence of the import in {} is very important
@@ -71,6 +72,16 @@ const Navigation = () => {
             >
               GitHub
             </NavLink>
+            
+            {/* Contact */}
+            <NavLink
+              id="active"
+              as={Link}
+              to={`${process.env.PUBLIC_URL}/contact`}
+              className="nav-link active"
+            >
+              Contact
+            </NavLink>
           </Nav>
         </Navbar.Collapse>
       </NavBar>
@@ -81,6 +92,7 @@ const Navigation = () => {
           path={`${process.env.PUBLIC_URL}/projects`}
           component={Projects}
         />
+        <Route path={`${process.env.PUBLIC_URL}/contact`} component={Contact} />
       </Switch>
     </Router>
   );

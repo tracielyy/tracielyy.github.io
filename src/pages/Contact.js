@@ -12,7 +12,7 @@ import {
   fragBgColor,
   titleColor,
   contentColor,
-} from "../components/color/Color.js";
+} from "../components/config/Color.js";
 
 const ContactDisplay = () => {
   const size = {

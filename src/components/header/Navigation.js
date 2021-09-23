@@ -8,6 +8,7 @@ import Home from "../../pages/Home.js";
 import Resume from "../../pages/Resume.js";
 import Projects from "../../pages/Projects.js";
 import Contact from "../../pages/Contact.js";
+import About from "../../pages/About.js";
 
 // Import Resources
 // Sequence of the import in {} is very important
@@ -29,7 +30,7 @@ import {
   fragBgColor,
   titleColor,
   lineColor,
-} from "../../components/color/Color.js";
+} from "../config/Color.js";
 
 // Navigation Component
 const Navigation = () => {
@@ -48,6 +49,15 @@ const Navigation = () => {
             className="me-auto"
             style={{ "justify-content": "end", width: "100%" }}
           >
+            {/* About */}
+            <NavLink
+              id="active"
+              as={Link}
+              to={`${process.env.PUBLIC_URL}/about`}
+              className="nav-link active"
+            >
+              About
+            </NavLink>
             {/* Resume */}
             <NavLink
               id="active"
@@ -72,7 +82,7 @@ const Navigation = () => {
             >
               GitHub
             </NavLink>
-            
+
             {/* Contact */}
             <NavLink
               id="active"
@@ -87,6 +97,12 @@ const Navigation = () => {
       </NavBar>
       <Switch>
         <Route path={`${process.env.PUBLIC_URL}/`} exact component={Home} />
+        <Route
+          path={`${process.env.PUBLIC_URL}/about`}
+          exact
+          component={About}
+        />
+
         <Route path={`${process.env.PUBLIC_URL}/resume`} component={Resume} />
         <Route
           path={`${process.env.PUBLIC_URL}/projects`}

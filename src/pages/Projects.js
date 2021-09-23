@@ -9,7 +9,7 @@ import {
   pageBgColor,
   fragBgColor,
   titleColor,
-} from "../components/color/Color.js";
+} from "../components/config/Color.js";
 
 const Example = () => {
   // Declare a new state variable, which we'll call "count"

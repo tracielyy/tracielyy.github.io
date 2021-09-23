@@ -1,7 +1,7 @@
 import styled from "styled-components"
 
 // Import Resources
-import {fragBgColor, lineColor} from "../../components/color/Color.js"
+import {fragBgColor, lineColor} from "../config/Color.js"
 
 const FragContainer = styled.div`
 

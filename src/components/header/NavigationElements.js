@@ -11,7 +11,7 @@ import {
   titleColor,
   lightAccent,
   lineColor,
-} from "../../components/color/Color.js";
+} from "../config/Color.js";
 import Navbar from "react-bootstrap/Navbar";
 import Nav from "react-bootstrap/Nav";
 import NavDropdown from "react-bootstrap/NavDropdown";

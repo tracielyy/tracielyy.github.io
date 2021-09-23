@@ -5,7 +5,7 @@ import './App.css';
 import Header from "./components/header/Header.js";
 import Footer from "./components/footer/Footer.js";
 
-import { pageBgColor } from "./components/color/Color.js";
+import { pageBgColor } from "./components/config/Color.js";
 
 
 function App() {

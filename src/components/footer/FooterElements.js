@@ -1,7 +1,7 @@
 import { SocialIcon } from 'react-social-icons';
 import styled from "styled-components";
 
-import {pageBgColor, fragBgColor, contentColor} from "../../components/color/Color.js";
+import {pageBgColor, fragBgColor, contentColor} from "../../components/config/Color.js";
 
 
 // Social Networking Site

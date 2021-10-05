@@ -3,6 +3,15 @@ import React, { useState, useEffect } from "react";
 import { BrowserRouter as Router, Route, Link, Switch } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 
+// Import Config Files
+import {
+  pageBgColor,
+  fragBgColor,
+  titleColor,
+  lineColor,
+} from "../config/Color.js";
+import ScrollToTop from "../config/ScrollToTop.js";
+
 // Import Pages
 import Home from "../../pages/Home.js";
 import Resume from "../../pages/Resume.js";
@@ -24,14 +33,8 @@ import {
 
 import Navbar from "react-bootstrap/Navbar";
 import Nav from "react-bootstrap/Nav";
-import NavDropdown from "react-bootstrap/NavDropdown";
-import Collapse from 'react-bootstrap/Collapse'
-import {
-  pageBgColor,
-  fragBgColor,
-  titleColor,
-  lineColor,
-} from "../config/Color.js";
+
+
 
 // Navigation Component
 const Navigation = () => {
@@ -102,6 +105,7 @@ const Navigation = () => {
           </Nav>
         </NavBar.Collapse>
       </NavBar>
+      <ScrollToTop />
       <Switch>
         <Route path={`${process.env.PUBLIC_URL}/`} exact component={Home} />
         <Route

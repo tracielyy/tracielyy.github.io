@@ -1,5 +1,5 @@
 // React Libraries
-
+import React, { useState, useEffect } from "react";
 import { BrowserRouter as Router, Route, Link, Switch } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 
@@ -25,6 +25,7 @@ import {
 import Navbar from "react-bootstrap/Navbar";
 import Nav from "react-bootstrap/Nav";
 import NavDropdown from "react-bootstrap/NavDropdown";
+import Collapse from 'react-bootstrap/Collapse'
 import {
   pageBgColor,
   fragBgColor,
@@ -34,6 +35,7 @@ import {
 
 // Navigation Component
 const Navigation = () => {
+  const [open, setOpen] = useState(false);
   return (
     <Router>
       <NavBar collapseOnSelect expand="lg" variant="dark" sticky="top">
@@ -43,8 +45,8 @@ const Navigation = () => {
             Tracie
           </span>
         </Navbar.Brand>
-        <Navbar.Toggle aria-controls="responsive-navbar-nav" />
-        <Navbar.Collapse id="responsive-navbar-nav">
+        <Navbar.Toggle aria-controls="responsive-navbar-nav"  onClick={() => setOpen(!open)}/>
+        <NavBar.Collapse id="responsive-navbar-nav" in={open}>
           <Nav
             className="me-auto"
             style={{ "justify-content": "end", width: "100%" }}
@@ -55,6 +57,7 @@ const Navigation = () => {
               as={Link}
               to={`${process.env.PUBLIC_URL}/about`}
               className="nav-link active"
+              onClick={() => setOpen(!open)}
             >
               About
             </NavLink>
@@ -64,6 +67,7 @@ const Navigation = () => {
               as={Link}
               to={`${process.env.PUBLIC_URL}/resume`}
               className="nav-link active"
+              onClick={() => setOpen(!open)}
             >
               Resume
             </NavLink>
@@ -71,6 +75,7 @@ const Navigation = () => {
             <NavLink
               to={`${process.env.PUBLIC_URL}/projects`}
               className="nav-link active"
+              onClick={() => setOpen(!open)}
             >
               Project
             </NavLink>
@@ -79,6 +84,7 @@ const Navigation = () => {
               href={`https://github.com/tracielyy`}
               target="_blank"
               className="nav-link active"
+              onClick={() => setOpen(!open)}
             >
               GitHub
             </NavLink>
@@ -89,11 +95,12 @@ const Navigation = () => {
               as={Link}
               to={`${process.env.PUBLIC_URL}/contact`}
               className="nav-link active"
+              onClick={() => setOpen(!open)}
             >
               Contact
             </NavLink>
           </Nav>
-        </Navbar.Collapse>
+        </NavBar.Collapse>
       </NavBar>
       <Switch>
         <Route path={`${process.env.PUBLIC_URL}/`} exact component={Home} />

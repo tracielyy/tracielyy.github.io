@@ -88,8 +88,8 @@ const Introduction = () => {
 
 // About Me
 const AboutContents = () => {
-  const figWidth = 280;
-  const figHeight = 280;
+  const figWidth = "160px";
+  const figHeight = "160px";
 
   return (
     <div>

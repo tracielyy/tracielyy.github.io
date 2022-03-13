@@ -9,6 +9,8 @@ import {
   pageBgColor,
   fragBgColor,
   titleColor,
+  lightAccent,
+  contentColor,
 } from "../components/config/Color.js";
 
 const Example = () => {
@@ -37,16 +39,38 @@ const HomeTitle = () => {
 const ProjectContents = () => {
   // List of Projects (in object)
 
+  const ProjectBlankMsg = ({ blankMessage = "Coming Soon" }) => {
+    return (
+      <div style={{
+
+      }}>
+        {blankMessage}
+      </div>
+    );
+  }
+
+  // Each Project Template Design
   const ProjectDisplay = ({ projectTitle = "" }) => {
-    return <div>{projectTitle}</div>;
+    return <div>
+      {projectTitle}
+    </div>;
   };
 
   const ProjectCategory = ({ category }) => {
     return (
-      <section style={{ "margin-left": "10px", "margin-top": "15px" }}>
+      <section
+        style={{
+          "borderRadius": "2px",
+          "boxShadow": `2px 2px 8px 3px lightgrey`,
+          "color": `${contentColor}`,
+          "margin-left": "10px", "margin-top": "15px", "margin-bottom": "25px",
+          "padding": "6px"
+        }}>
         <h5>{category}</h5>
         {/* List of Personal Projects (Loop) */}
-        <ProjectDisplay projectTitle="Sample" />
+        {/* <ProjectDisplay projectTitle="Sample" /> */}
+        {/* Without any project then display empty template */}
+        <ProjectBlankMsg blankMessage="Coming Soon..." />
       </section>
     );
   };

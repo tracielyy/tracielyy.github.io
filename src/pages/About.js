@@ -17,6 +17,9 @@ import Myself from "../resources/images/myself.jpg";
 
 import Url from "../components/url/Url.js";
 
+const media_max_width = "850px";
+
+
 const Hobbies = () => {
   // Array Of Hobbies
 
@@ -88,21 +91,24 @@ const Introduction = () => {
 
 // About Me
 const AboutContents = () => {
-  const figWidth = "160px";
-  const figHeight = "160px";
+  const figWidth = "25%";
+  const figHeight = "20%";
+
+  const MyProfileImage = styled(Image)`
+    width: ${figWidth};
+    height: ${figHeight};
+    background-image: ${Myself};
+    @media only screen and (max-width: ${media_max_width}) {
+      width: 48%;
+      height: 25%;
+  `;
 
   return (
     <div>
       <section style={{ "margin-top": "20px", "text-align": "left" }}>
         {/* Picture Of Myself */}
         <div style={{ "margin-bottom": "10px" }}>
-          <Image
-            width={figWidth}
-            height={figHeight}
-            alt="171x180"
-            src={Myself}
-            roundedCircle
-          />
+          <MyProfileImage src={Myself} roundedCircle />
         </div>
         <div style={{ "margin-left": "10px", "justify-content": "end" }}>
           <h4

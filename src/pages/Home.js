@@ -15,8 +15,14 @@ import {
 } from "../components/config/Color.js";
 
 
-const HomeBillboard = () => {
-  return <div></div>;
+const HomeBillboard = ({ notice = "Coming Soon" }) => {
+  return (
+    <div>
+      <p style={{ "fontSize": "50px" , "marginTop": "60px"}}>
+        {notice}
+      </p>
+    </div>
+  );
 };
 
 

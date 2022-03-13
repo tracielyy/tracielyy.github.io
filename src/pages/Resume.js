@@ -106,9 +106,12 @@ const MyExperience = () => {
     "Log identified issues in JIRA and retest fixed functions.",
     "Communicate and collaborate with developers on daily basis to fix identified issues.",
   ];
+  const stenggJobDesc = [
+    "Design backend functions and API calls for dashboard system",
+  ];  
   const Experience = ({ jobTitle, company, duration, description }) => {
     return (
-      <section>
+      <section style={{ "marginBottom": "35px" }}>
         <h5>
           {jobTitle}
           <span
@@ -145,11 +148,18 @@ const MyExperience = () => {
   return (
     <>
       <Experience
+        jobTitle="Software Engineer"
+        company="Singapore Technologies Engineering Ltd"
+        duration="Oct 2021 - Present"
+        description={stenggJobDesc}
+      />
+      <Experience
         jobTitle="Software Test Engineer"
         company="Pactera Singapore Pte Ltd"
         duration="Mar 2017 - Jul 2017"
         description={steJobDesc}
       />
+
     </>
   );
 };
@@ -209,7 +219,7 @@ const Contents = () => {
 
   return (
     <ResumeContents>
-      <Tab.Container id="left-tabs-example" defaultActiveKey="skills">
+      <Tab.Container id="left-tabs-example" defaultActiveKey="experience">
         <Row>
           <Col sm={3}>
             {/* The little tabs at the left side */}

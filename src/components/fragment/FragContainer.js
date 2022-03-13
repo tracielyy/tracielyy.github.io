@@ -3,6 +3,11 @@ import styled from "styled-components"
 // Import Resources
 import {fragBgColor, lineColor} from "../config/Color.js"
 
+
+export const BillboardContainer = styled.div`
+
+`;
+
 const FragContainer = styled.div`
 
     background-color: ${fragBgColor};

@@ -3,7 +3,7 @@ import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 
 // Import Components
-import Container from "../components/fragment/FragContainer.js";
+import Container from "../../components/fragment/FragContainer.js";
 import Image from "react-bootstrap/Image";
 
 // Import Resources
@@ -12,10 +12,10 @@ import {
   fragBgColor,
   titleColor,
   colorAccent,
-} from "../components/config/Color.js";
+} from "../../components/config/Color.js";
 import Myself from "../resources/images/myself.jpg";
 
-import Url from "../components/url/Url.js";
+import Url from "../../components/url/Url.js";
 
 const media_max_width = "850px";
 

@@ -2,7 +2,7 @@ import { Fragment } from "react";
 import React, { useState, useEffect } from "react";
 
 // Import Components
-import Container from "../components/fragment/FragContainer.js";
+import Container from "../../components/fragment/FragContainer.js";
 
 // Import Resources
 import {
@@ -11,7 +11,7 @@ import {
   titleColor,
   lightAccent,
   contentColor,
-} from "../components/config/Color.js";
+} from "../../components/config/Color.js";
 
 const Example = () => {
   // Declare a new state variable, which we'll call "count"

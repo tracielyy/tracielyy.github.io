@@ -13,11 +13,11 @@ import {
 import ScrollToTop from "../config/ScrollToTop.js";
 
 // Import Pages
-import Home from "../../pages/Home.js";
-import Resume from "../../pages/Resume.js";
-import Projects from "../../pages/Projects.js";
+import Home from "../../pages/MyHome/Home.js";
+import Resume from "../../pages/Resume/Resume.js";
+import Projects from "../../pages/MyProject/Projects.js";
 import Contact from "../../pages/Contact.js";
-import About from "../../pages/About.js";
+import About from "../../pages/About/About.js";
 
 // Import Resources
 // Sequence of the import in {} is very important

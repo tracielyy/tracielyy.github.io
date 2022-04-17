@@ -2,7 +2,7 @@ import { Fragment } from "react";
 import React, { useState, useEffect } from "react";
 
 // Import Components
-import Container from "../components/fragment/FragContainer.js";
+import Container from "../../components/fragment/FragContainer.js";
 import Image from "react-bootstrap/Image";
 import { SocialIcon } from "react-social-icons";
 
@@ -12,7 +12,7 @@ import {
   fragBgColor,
   titleColor,
   contentColor,
-} from "../components/config/Color.js";
+} from "../../components/config/Color.js";
 
 const ContactDisplay = () => {
   const Social = ({ url, description }) => {

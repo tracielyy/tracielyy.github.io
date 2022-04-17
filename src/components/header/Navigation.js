@@ -16,7 +16,7 @@ import ScrollToTop from "../config/ScrollToTop.js";
 import Home from "../../pages/MyHome/Home.js";
 import Resume from "../../pages/Resume/Resume.js";
 import Projects from "../../pages/MyProject/Projects.js";
-import Contact from "../../pages/Contact.js";
+import Contact from "../../pages/Contact/Contact.js";
 import About from "../../pages/About/About.js";
 
 // Import Resources

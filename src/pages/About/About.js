@@ -13,7 +13,7 @@ import {
   titleColor,
   colorAccent,
 } from "../../components/config/Color.js";
-import Myself from "../resources/images/myself.jpg";
+import Myself from "../../resources/images/myself.jpg";
 
 import Url from "../../components/url/Url.js";
 
@@ -72,7 +72,7 @@ const Introduction = () => {
             url="https://www.uow.edu.au/"
             description="University Of Wollongong"
           />
-          . I am keen in learning new things to improve myself. Being always
+          , I am keen in learning new things to improve myself. Being always
           curious, I am attracted to the "puzzle-like" nature of coding that
           brings both joy{" "}
           <ColoredItalic>(when the code just "worked")</ColoredItalic> &amp;

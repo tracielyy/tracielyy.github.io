@@ -3,7 +3,7 @@ import React, { useState, useEffect } from "react";
 import "./Resume.css";
 
 // Import Components
-import Container from "../components/fragment/FragContainer.js";
+import Container from "../../components/fragment/FragContainer.js";
 import ProgressBar from "react-bootstrap/ProgressBar";
 import styled from "styled-components";
 import Tab from "react-bootstrap/Tab";
@@ -25,7 +25,7 @@ import {
   colorAccent,
   lineColor,
   subContentColor,
-} from "../components/config/Color.js";
+} from "../../components/config/Color.js";
 
 /* 
   ------ Education Section ------

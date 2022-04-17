@@ -1,6 +1,7 @@
 import { Fragment } from "react";
 import React, { useState, useEffect } from "react";
 import styled from "styled-components";
+import axios from 'axios';
 
 // Import Components
 import Container from "../../components/fragment/FragContainer.js";
@@ -15,11 +16,13 @@ import {
 } from "../../components/config/Color.js";
 
 
+
+
 const HomeBillboard = ({ notice = "Coming Soon" }) => {
   return (
     <div>
-      <p style={{ "fontSize": "50px" , "marginTop": "60px"}}>
-        {notice}
+      <p style={{ "fontSize": "50px", "marginTop": "60px" }}>
+        {/* {notice} */}
       </p>
     </div>
   );

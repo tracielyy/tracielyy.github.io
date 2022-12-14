@@ -1,0 +1,25 @@
+version: '2'
+services:
+  react-app:
+    image: react-app
+    container_name: react-app
+    volumes:
+      - ./src:/app/src
+      - ./public:/app/public
+    ports:
+      - "25000:3000"
+    restart: unless-stopped
+    labels:
+    # This one is important since we default to not expose
+      - "traefik.enable=true"
+      - "traefik.frontend.rule=Host:www.tracielyy.com"
+      - "traefik.port=3000"
+      - "traefik.docker.network=web"
+    networks:
+      - web
+      - internal
+
+networks:
+  web:
+   external: true
+  internal:
